@@ -9,5 +9,6 @@
 #
 
 class CrewCategory < ActiveRecord::Base
+  has_many :users
   attr_accessible :title
 end
