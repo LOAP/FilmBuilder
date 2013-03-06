@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119015246) do
+ActiveRecord::Schema.define(:version => 20130306184935) do
 
   create_table "bios", :force => true do |t|
     t.text     "content"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(:version => 20121119015246) do
   end
 
   add_index "bios", ["user_id"], :name => "index_bios_on_user_id"
+
+  create_table "crew_categories", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"

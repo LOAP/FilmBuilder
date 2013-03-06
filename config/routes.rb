@@ -1,4 +1,6 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
+  resources :crew_categories
+
   resources :bios
   resources :pages#, except: :show
   resources :friendships

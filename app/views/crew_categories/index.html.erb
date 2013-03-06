@@ -1,0 +1,23 @@
+<h1>Listing crew_categories</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @crew_categories.each do |crew_category| %>
+  <tr>
+    <td><%= crew_category.title %></td>
+    <td><%= link_to 'Show', crew_category %></td>
+    <td><%= link_to 'Edit', edit_crew_category_path(crew_category) %></td>
+    <td><%= link_to 'Destroy', crew_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Crew category', new_crew_category_path %>
