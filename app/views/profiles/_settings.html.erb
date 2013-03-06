@@ -10,10 +10,8 @@
     <div class="dashboard_home_settings_view_profile">
       <%= link_to 'Add Content', @profile %>
     </div>
-    <% if can? :update, @profile %>
-    <div class="dashboard_home_settings_private">
-      <p style="color:orange;padding-left:0px;font-size:12px"><%= check_box_tag 'checkbox_name', 'selected' %><strong>Make Profile Private</strong></p>
-    </div>
+    <% if @user.crew_category %>
+        <h3><%= @user.crew_category.title %></h3>
     <% end %>
   </div>
   <div class = "dashboard_home_settings_container_lt_column">
