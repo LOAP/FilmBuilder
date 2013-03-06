@@ -17,6 +17,8 @@
 #  updated_at             :datetime         not null
 #  name                   :string(255)
 #  crew_category_id       :integer
+#  city                   :string(255)
+#  state                  :string(255)
 #
 
 require 'spec_helper'

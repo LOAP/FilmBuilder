@@ -17,6 +17,8 @@
 #  updated_at             :datetime         not null
 #  name                   :string(255)
 #  crew_category_id       :integer
+#  city                   :string(255)
+#  state                  :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -26,6 +28,7 @@ class User < ActiveRecord::Base
   has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
   belongs_to :crew_category
+  belongs_to :location
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -37,7 +40,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :crew_category_id
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :crew_category_id, :state, :city
 
   has_many :posts, :dependent => :destroy, :order => "created_at DESC"
   has_one :profile, :dependent => :destroy

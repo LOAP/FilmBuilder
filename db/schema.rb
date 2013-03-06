@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306190844) do
+ActiveRecord::Schema.define(:version => 20130306202556) do
 
   create_table "bios", :force => true do |t|
     t.text     "content"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20130306190844) do
   end
 
   add_index "friendships", ["user_id", "friend_id"], :name => "index_friendships_on_user_id_and_friend_id", :unique => true
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -92,6 +100,8 @@ ActiveRecord::Schema.define(:version => 20130306190844) do
     t.datetime "updated_at",                             :null => false
     t.string   "name"
     t.integer  "crew_category_id"
+    t.string   "city"
+    t.string   "state"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

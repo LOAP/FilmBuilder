@@ -35,3 +35,8 @@ gem 'sidekiq'
 gem 'geocoder'
 gem 'bootstrap-will_paginate'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+

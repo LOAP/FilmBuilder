@@ -22,7 +22,11 @@
       <span style="color:black;padding-left:12px;font-size:12px"><strong>Created On: <%= @profile.created_at.strftime("%b. %d, %Y") %></strong></span>
     </div>
     <div class= "dashboard_home_location_ip">
-      <span style="color:black;padding-left:12px;font-size:12px"><strong>Location: <%= @profile.user.current_sign_in_ip %></strong></span>
+      <span style="color:black;padding-left:12px;font-size:12px">
+        <% if @user.city %>
+            <%= @user.city %>, <%= @user.state %>
+         <% end %>
+        </span>
     </div>
     <div class= "dashboard_home_bio_truncate">
       <span style="color:gray;padding-left:12px;font-size:15px"><strong><%= truncate(@user.bio.content, :length => 200) %></strong> <%= link_to 'full Bio', @user.bio %></span>
